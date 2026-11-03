@@ -1,0 +1,271 @@
+:root {
+  --pink: #FFCED8;
+  --blush: #FFDDDD;
+  --cream: #FFF4DE;
+  --peach: #FFE8C4;
+  --ink: #342C2C;
+  --muted: #766969;
+  --line: rgba(52,44,44,.17);
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--sans); }
+a { color: inherit; text-decoration: none; }
+.site-header { height: 78px; padding: 0 7.2%; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); background: rgba(255,244,222,.94); position: sticky; top: 0; z-index: 20; backdrop-filter: blur(12px); }
+.wordmark { font: 700 27px var(--serif); letter-spacing: -2px; }
+.wordmark span { color: #D67E91; }
+.nav { display: flex; align-items: center; gap: 38px; font-size: 12px; letter-spacing: .04em; }
+.nav a { transition: opacity .2s; }
+.nav a:hover, .text-link:hover { opacity: .55; }
+.nav-contact { border-bottom: 1px solid var(--ink); padding-bottom: 5px; }
+.nav-contact span, .button span, .text-link span { margin-left: 8px; }
+.menu-toggle { display: none; border: 0; background: none; font-size: 23px; color: var(--ink); cursor: pointer; }
+.section-wrap { width: min(1120px, 85%); margin: 0 auto; }
+.hero { min-height: 660px; display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 7%; padding-top: 65px; padding-bottom: 80px; position: relative; }
+.eyebrow { font-size: 10px; letter-spacing: .17em; font-weight: 700; color: #987B78; display: flex; align-items: center; gap: 12px; }
+.eyebrow span { color: #B99A92; margin-left: auto; }
+.eyebrow-line { width: 28px; height: 1px; background: #C78D91; display: inline-block; }
+h1, h2 { font: 500 clamp(48px, 6.2vw, 78px)/1.08 var(--serif); letter-spacing: -.045em; }
+h1 { max-width: 620px; margin: 30px 0 24px; }
+h1 em, h2 em { color: #B9787D; font-weight: 500; }
+.hero-intro { color: var(--muted); font-size: 15px; line-height: 1.9; max-width: 470px; }
+.hero-actions { display: flex; align-items: center; gap: 28px; margin-top: 34px; }
+.button { display: inline-flex; align-items: center; justify-content: center; padding: 15px 21px; font-size: 11px; letter-spacing: .04em; transition: transform .2s, background .2s; }
+.button:hover { transform: translateY(-3px); }
+.button-dark { background: var(--ink); color: #fff9f0; }
+.text-link { font-size: 12px; border-bottom: 1px solid var(--ink); padding-bottom: 7px; }
+.hero-note { margin-top: 62px; color: #9D8981; font-size: 9px; letter-spacing: .16em; }
+.hero-visual { position: relative; padding: 22px 18px 0 0; }
+.photo-placeholder { height: 425px; background: linear-gradient(145deg, var(--pink), var(--peach)); display: flex; flex-direction: column; justify-content: center; align-items: center; color: #9E7478; gap: 10px; text-align: center; border: 1px solid rgba(255,255,255,.7); }
+.hero-photo { width: 100%; height: 425px; object-fit: cover; display: block; }
+.placeholder-plus { font-size: 34px; font-weight: 300; }
+.photo-placeholder span:not(.placeholder-plus) { font-size: 10px; letter-spacing: .16em; }
+.photo-placeholder small { font-size: 10px; color: #A17E7B; }
+.visual-caption { display: flex; justify-content: space-between; padding-top: 13px; font-size: 9px; letter-spacing: .13em; color: #9D8981; }
+.hero-sticker { position: absolute; right: -32px; top: 45px; background: var(--cream); border: 1px solid var(--line); width: 92px; height: 92px; border-radius: 50%; display: grid; place-content: center; text-align: center; font: italic 14px/1.25 var(--serif); transform: rotate(9deg); }
+.hero-bottom { position: absolute; bottom: 25px; left: 0; right: 0; display: flex; justify-content: space-between; font-size: 9px; letter-spacing: .15em; color: #9D8981; }
+.scroll-arrow { font-size: 16px; }
+.intro-band { background: var(--pink); padding: 66px 10%; text-align: center; }
+.intro-band p { max-width: 880px; margin: auto; font: 500 clamp(23px, 3vw, 37px)/1.45 var(--serif); letter-spacing: -.02em; }
+.intro-band em { color: #A65E6D; }
+.about-section { display: grid; grid-template-columns: .85fr 1.15fr; gap: 12%; padding-top: 125px; padding-bottom: 130px; }
+.section-heading h2, .work-top h2, .contact-inner h2 { font-size: clamp(43px, 5.2vw, 65px); margin-top: 28px; }
+.about-content { padding-top: 28px; color: var(--muted); font-size: 14px; line-height: 1.9; }
+.about-content .large-copy { color: var(--ink); font: 500 23px/1.55 var(--serif); }
+.about-facts { border-top: 1px solid var(--line); margin-top: 38px; display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; padding-top: 20px; }
+.about-facts div { display: flex; flex-direction: column; gap: 9px; }
+.about-facts span, .project-meta, .tool-strip > span { font-size: 9px; letter-spacing: .13em; color: #A17E7B; }
+.about-facts strong { font-size: 11px; line-height: 1.5; color: var(--ink); font-weight: 600; }
+.work-section { background: var(--blush); padding: 110px 0 100px; }
+.work-top { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 55px; }
+.work-top h2 { margin-bottom: 0; }
+.work-description { max-width: 300px; color: #806F6D; font-size: 13px; line-height: 1.8; margin-bottom: 8px; }
+.project { min-width: 0; }
+.project-featured { display: grid; grid-template-columns: 1.15fr .85fr; gap: 7%; align-items: center; margin-bottom: 65px; }
+.project-image { background: linear-gradient(135deg, #F7C6CF, #FCE7D1); min-height: 260px; overflow: hidden; }
+.project-image img { display: block; width: 100%; height: 100%; min-height: 260px; object-fit: cover; }
+.project-image-large { min-height: 390px; background: linear-gradient(135deg, #F3BFCB, #F9E7C9); }
+.project-image-large img { min-height: 390px; }
+.image-placeholder { min-height: inherit; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #A16F77; text-align: center; padding: 20px; }
+.image-placeholder span { font: italic 16px var(--serif); }
+.image-placeholder strong { font: 500 22px var(--serif); letter-spacing: .08em; }
+.image-placeholder small { font: 9px var(--sans); letter-spacing: .16em; }
+.project-info { padding: 22px 0; }
+.project-meta { display: flex; justify-content: space-between; }
+.project-info h3 { font: 500 31px var(--serif); margin: 20px 0 12px; }
+.project-info p { color: #806F6D; font-size: 13px; line-height: 1.8; max-width: 470px; }
+.tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.tag-list span { border: 1px solid rgba(80,55,55,.22); border-radius: 30px; padding: 7px 10px; color: #765E5D; font-size: 9px; }
+.project-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 55px 5%; }
+.project-grid .project-image { height: 290px; }
+.project-grid .project-image img { min-height: 290px; }
+.project-grid .project-info { padding-top: 18px; }
+.project-grid .project-info h3 { margin-top: 14px; }
+.portfolio-note { font-size: 10px; color: #947C7B; margin: 50px 0 0; }
+.skills-section { padding-top: 125px; padding-bottom: 125px; }
+.skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 58px; }
+.skill-card { padding: 27px 25px 30px; background: #FFF9ED; border: 1px solid rgba(52,44,44,.09); min-height: 225px; }
+.skill-card > span { color: #C18189; font: italic 15px var(--serif); }
+.skill-card h3 { font: 500 25px var(--serif); margin: 28px 0 12px; }
+.skill-card p { font-size: 12px; color: var(--muted); line-height: 1.8; margin: 0; }
+.tool-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: 55px; padding: 20px 0; display: grid; grid-template-columns: 150px 1fr; gap: 20px; align-items: center; }
+.tool-strip p { margin: 0; font-size: 11px; line-height: 2; color: var(--muted); }
+.tool-strip i { color: #C18189; font-style: normal; padding: 0 8px; }
+.contact-section { background: var(--peach); padding: 105px 0 80px; }
+.contact-inner { text-align: center; }
+.contact-inner .eyebrow { justify-content: center; }
+.contact-inner h2 { margin: 25px 0 18px; }
+.contact-copy { max-width: 490px; margin: 0 auto 28px; font-size: 13px; line-height: 1.9; color: var(--muted); }
+.contact-links { display: flex; justify-content: center; gap: 35px; margin-top: 65px; padding-top: 20px; border-top: 1px solid var(--line); }
+.contact-links a { font-size: 9px; letter-spacing: .13em; }
+.contact-links span { margin-left: 6px; }
+.site-footer { padding: 24px 7.2%; display: flex; justify-content: space-between; align-items: center; font-size: 9px; letter-spacing: .1em; color: #8D7974; }
+.site-footer .wordmark { color: var(--ink); }
+@media (max-width: 800px) {
+  .site-header { height: 68px; padding: 0 6%; }
+  .menu-toggle { display: block; }
+  .nav { display: none; position: absolute; top: 68px; left: 0; right: 0; padding: 22px 6%; background: var(--cream); border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; gap: 22px; }
+  .nav.open { display: flex; }
+  .section-wrap { width: 88%; }
+  .hero { grid-template-columns: 1fr; gap: 35px; padding-top: 65px; padding-bottom: 85px; }
+  .hero-copy { order: 1; }
+  .hero-visual { order: 2; width: 85%; margin: auto; }
+  .photo-placeholder { height: 360px; }
+  .hero-photo { height: 360px; }
+  .hero-bottom { bottom: 24px; }
+  .about-section { grid-template-columns: 1fr; gap: 15px; padding-top: 85px; padding-bottom: 90px; }
+  .about-content { padding-top: 0; }
+  .work-top { display: block; }
+  .work-description { margin-top: 25px; }
+  .project-featured { grid-template-columns: 1fr; gap: 18px; }
+  .project-image-large, .project-image-large img { min-height: 300px; }
+  .skills-section { padding-top: 85px; padding-bottom: 85px; }
+}
+@media (max-width: 560px) {
+  h1 { font-size: 49px; }
+  .hero { min-height: auto; }
+  .hero-visual { width: 92%; }
+  .photo-placeholder { height: 310px; }
+  .hero-photo { height: 310px; }
+  .hero-sticker { right: -20px; width: 78px; height: 78px; font-size: 12px; }
+  .hero-note { margin-top: 40px; }
+  .hero-bottom { font-size: 7px; }
+  .intro-band { padding: 48px 7%; }
+  .about-facts { grid-template-columns: 1fr; gap: 18px; }
+  .work-section { padding: 80px 0; }
+  .project-grid { grid-template-columns: 1fr; gap: 30px; }
+  .project-grid .project-image { height: 250px; }
+  .project-grid .project-image img { min-height: 250px; }
+  .skills-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 35px; }
+  .skill-card { min-height: auto; }
+  .tool-strip { grid-template-columns: 1fr; gap: 10px; }
+  .contact-section { padding: 80px 0 55px; }
+  .contact-links { flex-direction: column; gap: 18px; }
+  .site-footer { padding: 22px 6%; gap: 15px; flex-wrap: wrap; }
+  .site-footer > span { order: 3; width: 100%; text-align: center; }
+}
+'''
+js = r'''const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = nav.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+document.querySelectorAll(".nav a").forEach((link) => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+'''
+readme = r'''ARISHA FATIMA — PERSONAL PORTFOLIO WEBSITE
+
+FILES
+- index.html: website content and SEO metadata
+- styles.css: layout, colour palette and mobile responsiveness
+- script.js: mobile navigation and current footer year
+- assets/: add your own photo and client screenshots here later
+
+ADD YOUR PHOTO / SCREENSHOTS LATER
+You do not need to upload any images now. When you are ready:
+1. Add the image file to the assets folder.
+2. In index.html, find the matching placeholder and its comment.
+3. Replace the placeholder div with an image tag. Example:
+   <img src="assets/zak-garments.jpg" alt="ZAK Garments social media campaign">
+4. Keep descriptive alt text for accessibility and image SEO.
+
+Suggested image filenames:
+- arisha-photo.jpg
+- zak-garments.jpg
+- maka-matcha.jpg
+- wajeeh-zeeshan.jpg
+- club-21.jpg
+
+PUBLISH WITH GITHUB PAGES
+1. Sign in to GitHub and create a new PUBLIC repository, e.g. arisha-portfolio.
+2. Upload index.html, styles.css, script.js, README.txt and the assets folder.
+3. Open repository Settings > Pages.
+4. Under Build and deployment, select Deploy from a branch.
+5. Choose branch main and folder /(root), then Save.
+6. Wait for deployment. Your link will look like:
+   https://YOUR-GITHUB-USERNAME.github.io/arisha-portfolio/
+7. Open the live link on desktop and phone before submitting.
+
+IMPORTANT FINAL CHECKS
+- Add your own portrait and project screenshots when available.
+- Add accurate details for the Club 21.pk project when you have them; the current card intentionally does not claim unconfirmed work.
+- Check that every project description reflects your actual contribution.
+- Add the live GitHub Pages link to your assignment submission after deployment.
+'''
+
+(base/'index.html').write_text(html, encoding='utf-8')
+(base/'styles.css').write_text(css, encoding='utf-8')
+(base/'script.js').write_text(js, encoding='utf-8')
+(base/'README.txt').write_text(readme, encoding='utf-8')
+
+# Overview document
+from docx import Document
+from docx.shared import Inches, Pt, RGBColor
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+
+doc = Document()
+sec = doc.sections[0]
+sec.top_margin = Inches(.65); sec.bottom_margin = Inches(.65)
+sec.left_margin = Inches(.8); sec.right_margin = Inches(.8)
+styles = doc.styles
+styles['Normal'].font.name = 'Arial'; styles['Normal'].font.size = Pt(10); styles['Normal'].font.color.rgb = RGBColor(65,55,55)
+for s in ['Title','Heading 1','Heading 2']:
+    styles[s].font.name = 'Georgia'
+styles['Title'].font.size = Pt(23); styles['Title'].font.color.rgb = RGBColor(166,94,109)
+styles['Heading 1'].font.size = Pt(15); styles['Heading 1'].font.color.rgb = RGBColor(166,94,109)
+
+p=doc.add_paragraph(); p.alignment=WD_ALIGN_PARAGRAPH.CENTER
+r=p.add_run('WEBSITE OVERVIEW & DESIGN PLAN'); r.bold=True; r.font.name='Georgia'; r.font.size=Pt(22); r.font.color.rgb=RGBColor(166,94,109)
+p=doc.add_paragraph(); p.alignment=WD_ALIGN_PARAGRAPH.CENTER
+r=p.add_run('ARISHA FATIMA  |  MARKETING STUDENT & CREATIVE STRATEGIST'); r.font.size=Pt(9); r.font.color.rgb=RGBColor(130,110,105)
+
+doc.add_heading('1. Purpose of the Website', level=1)
+doc.add_paragraph('The purpose of this website is to build my professional personal brand and present my marketing interests, client experience, skills and selected projects in one accessible place. It is designed to support my search for marketing and brand strategy internship opportunities by giving recruiters and potential collaborators a clear view of how I think about brands, audiences and creative communication.')
+doc.add_heading('2. Target Audience & Key Message', level=1)
+doc.add_paragraph('The primary target audience includes marketing recruiters, internship coordinators, brand and social media teams, small businesses and potential clients. The website communicates that I am a marketing student at IBA Karachi with a creative and audience-focused approach.')
+doc.add_paragraph('My central message is: I help brands identify the gap between what they are producing and what their audience wants through creative storytelling, social media audits and thoughtful brand development.')
+doc.add_heading('3. Website Structure / Wireframe', level=1)
+tbl=doc.add_table(rows=0, cols=1); tbl.style='Table Grid'
+wire=[('HEADER / NAVIGATION','AF. logo | About | Selected Work | What I Do | Contact'),('HOME / HERO','Professional headline + introduction + internship call-to-action + reserved photo frame'),('INTRODUCTION STRIP','Short statement about connecting brand communication with audience needs'),('ABOUT','Background, IBA Karachi education, professional interests and internship objective'),('SELECTED WORK','Client project cards: ZAK Garments, Maka Matcha, Wajeeh Zeeshan and Club 21.pk'),('SKILLS / APPROACH','Understand → Shape → Create; marketing areas and creative tools'),('CONTACT','Email address and LinkedIn profile'),('FOOTER','Name, copyright year and back-to-top link')]
+for a,b in wire:
+    cell=tbl.add_row().cells[0]; cell.text=a+'\n'+b
+    for para in cell.paragraphs:
+        para.paragraph_format.space_after=Pt(3)
+        for run in para.runs: run.font.size=Pt(9)
+
+doc.add_heading('4. Visual Design & User Experience', level=1)
+doc.add_paragraph('The website uses an editorial and minimal design direction. Its pastel palette creates a warm, approachable look while serif headings and clean sans-serif body text maintain a professional presentation. The layout uses clear sections, generous spacing, simple navigation and restrained visual details so visitors can scan the content easily.')
+doc.add_paragraph('Colour palette:')
+for c in ['#FFCED8 — soft pink',' #FFDDDD — blush pink','#FFF4DE — warm cream','#FFE8C4 — light peach']:
+    doc.add_paragraph(c.strip(), style='List Bullet')
+doc.add_paragraph('A reserved image frame is included for a personal photograph, and separate image placeholders are provided for client projects. These can be replaced with original photographs and screenshots later.')
+doc.add_heading('5. SEO & Mobile Optimization', level=1)
+for item in ['A descriptive page title and meta description identify the website owner and professional focus.','Relevant keywords are included naturally in headings and page content, including marketing student, creative strategist, brand strategy, social media management, content creation, social media audit and marketing portfolio.','Images can include descriptive alt text when added, helping accessibility and image search visibility.','The website uses semantic HTML sections, a clear heading hierarchy and descriptive navigation labels.','Responsive CSS adjusts the layout for desktop, tablet and mobile screens, including a collapsible mobile navigation menu.','Readable typography, sufficient spacing and clear contact links support usability.']:
+    doc.add_paragraph(item, style='List Bullet')
+doc.add_heading('6. Deployment Plan', level=1)
+doc.add_paragraph('The website will be deployed for free using GitHub Pages. The HTML, CSS and JavaScript files will be uploaded to a GitHub repository, and GitHub Pages will publish the website from the main branch. The final live URL will be added to the assignment submission after deployment and testing.')
+doc.add_heading('7. Contact Information', level=1)
+doc.add_paragraph('Email: arishafatima84@gmail.com')
+doc.add_paragraph('LinkedIn: https://www.linkedin.com/in/arisha-fatima-0b0429328/')
+doc.add_paragraph('Note: The Club 21.pk card is included as a client entry, with its detailed project scope to be updated when the exact work description is finalized.')
+
+docx=base/'Website_Overview_and_Design_Plan.docx'
+doc.save(docx)
+
+zip_path=Path('/mnt/data/Arisha_Fatima_Portfolio_Website.zip')
+with zipfile.ZipFile(zip_path,'w',zipfile.ZIP_DEFLATED) as z:
+    for p in base.rglob('*'):
+        if p.is_file(): z.write(p, p.relative_to(base.parent))
+print('Created', zip_path, docx, base/'index.html')
+PY
