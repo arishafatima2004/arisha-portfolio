@@ -1,11 +1,12 @@
 :root {
-  --pink: #FFCED8;
-  --light-pink: #FFDDDD;
-  --cream: #FFF4DE;
-  --peach: #FFE8C4;
-  --ink: #292326;
-  --muted: #76696D;
-  --white: #FFFCF8;
+  --pink: #E5D8C7;
+  --light-pink: #EDE4D8;
+  --cream: #F5F0E7;
+  --peach: #B69B7D;
+  --ink: #382C25;
+  --muted: #786B60;
+  --white: #FBF9F5;
+
   --serif: "Playfair Display", Georgia, serif;
   --sans: "DM Sans", Arial, sans-serif;
 }
